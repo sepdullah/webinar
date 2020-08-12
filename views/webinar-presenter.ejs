@@ -1,0 +1,107 @@
+<%- include("includes/head-with-opentok") %>
+
+<h1 class="page-title"><span>[Presenter]</span> Webinar: <%= webinar.name %></h1>
+
+<div id="webinar" data-opentok="<%= JSON.stringify(opentok) %>">
+
+  <div class="controls box">
+    <div id="installers" class="hidden">
+      <h2>Install extensions</h2>
+      <button id="chrome-install" class="btn btn-light">Chrome screensharing</button>
+    </div>
+    <div id="webinar-controls">
+      <h2>Broadcast controls</h2>
+      <button id="start-btn" class="btn" disabled="disabled">Start broadcast</button>
+      <button id="pause-btn" class="btn btn-light" disabled="disabled">Pause broadcast</button>
+      <button id="end-btn" class="btn btn-red" disabled="disabled">End broadcast</button>
+    </div>
+    <div class="url-box">
+      <h2>Viewer URL</h2>
+      <div class="input-box input-box-table">
+        <input id="share-url-viewer" type="text" value="<%= webinar.urls.viewer %>">
+        <button class="btn copy" data-clipboard-target="#share-url-viewer">Copy</button>
+      </div>
+      <h2>Presenter URL</h2>
+      <div class="input-box input-box-table">
+        <input id="share-url-presenter" type="text" value="<%= webinar.urls.presenter %>">
+        <button class="btn copy" data-clipboard-target="#share-url-presenter">Copy</button>
+      </div>
+    </div>
+    <div>
+      <a href="/" class="btn btn-red">Exit</a>
+    </div>
+  </div>
+
+  <div class="display">
+
+    <div id="presenter-info">
+      <div id="broadcast-status" class="offline">Offline</div>
+      <div id="presenter-msg">Loading...</div>
+    </div>
+
+    <div id="session-info" class="box">
+      <div id="viewports">
+
+        <h2>Your feeds</h2>
+        <div id="presenter-view">
+
+          <div class="viewport">
+            <h3>Camera/Mic</h3>
+            <div class="viewport-controls">
+              <label class="btn">
+                <input type="checkbox" id="camera-control-share-video"
+                       checked="checked" disabled="disabled">Use cam
+              </label>
+              <label class="btn">
+                <input type="checkbox" id="camera-control-mute-audio" disabled="disabled">Mute mic
+              </label>
+              <button id="camera-share-start" disabled="disabled"
+                      class="btn">Start Camera/Mic</button>
+            </div>
+            <div id="presenter-camera" class="feed inactive"></div>
+          </div>
+
+          <div class="viewport">
+            <h3>Screen</h3>
+            <div class="viewport-controls">
+              <button id="screen-share-start"
+                      class="btn" disabled="disabled">Start screenshare</button>
+              <button id="screen-share-stop"
+                      class="btn btn-light" disabled="disabled">Stop screenshare</button>
+            </div>
+            <div id="presenter-screen" class="feed inactive"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <h2>Statistics</h2>
+        <div id="stats">
+          <div id="viewers">Viewer(s): <span>N/A</span></div>
+          <div id="presenters">Presenter(s): <span>N/A</span></div>
+          <div id="duration">Duration: <span>--</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script id="chrome-installer-message" type="text/template" data-title="Install Chrome extension">
+  <p>Clicking the button below will open the Chrome Webstore in a different window. Please install the addon on that page and then reload this page.</p>
+  <p><a href="https://chrome.google.com/webstore/detail/ibjimaenheofjdnpjplikdaccljdfmaf"
+     target="_blank" class="btn">Install Extension from Chrome Webstore</a>
+  </p>
+  <p><a href="javascript:location.reload()">Reload</a></p>
+</script>
+
+<script id="share-viewer-url" type="text/template" data-title="Share URL">
+  <p>Share this URL with your viewers.</p>
+  <div class="input-box input-box-table">
+    <input id="viewer-url-dialog" type="text" value="<%= webinar.urls.viewer %>" readonly>
+    <button class="btn copy" data-clipboard-target="#viewer-url-dialog">Copy</button>
+  </div>
+</script>
+
+<%- include("includes/foot") %>

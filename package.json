@@ -1,0 +1,40 @@
+{
+  "name": "tokinar",
+  "version": "0.0.1",
+  "description": "Simple Webinar system based on OpenTok",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "certs": "openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out cert.pem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaustavdm/tokinar.git"
+  },
+  "engines": {
+    "node": "6.9.x",
+    "npm": "3.x"
+  },
+  "keywords": [
+    "webinar",
+    "tokbox",
+    "opentok",
+    "webrtc"
+  ],
+  "author": "Kaustav Das Modak <kaustav.dasmodak@yahoo.co.in>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kaustavdm/tokinar/issues"
+  },
+  "homepage": "https://github.com/kaustavdm/tokinar#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "opentok": "^2.4.0"
+  },
+  "cacheDirectories": ["node_modules", "storage" ]
+}

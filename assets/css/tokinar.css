@@ -1,0 +1,606 @@
+/* - Global styles/overrides ------------------ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    background-color: #e4e4e4;
+    color: #151515;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+/* - Headings --------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    margin-left: 0;
+}
+
+h1 {
+    color: #5d5d5d;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* - Hyperlinks and buttons ------------------- */
+a,
+a:visited {
+    color: #0099cc;
+    text-decoration: none;
+    transition: color 0.5s ease-out;
+}
+
+a:hover {
+    color: #0080ab;
+}
+
+input[type="submit"] {
+    border: 0;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+a.btn,
+button.btn,
+input[type="submit"].btn {
+    background-color: #0099cc;
+    min-height: 2.5rem;
+    min-width: 10rem;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    padding: 1rem;
+    display: inline-block;
+    border: none;
+    transition: background-color 0.5s ease-out, border 0.5s ease-out, color 0.5s ease-out;
+}
+
+a.btn:hover,
+button.btn:hover,
+input[type="submit"].btn:hover {
+    background-color: #0080ab;
+}
+
+a.btn:disabled,
+button.btn:disabled,
+input[type="submit"].btn:disabled {
+    background-color: #639aad;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+a.btn.btn-light,
+button.btn.btn-light,
+input[type="submit"].btn.btn-light {
+    background-color: #fff;
+    border: 1px solid #0099cc;
+    color: #0099cc;
+}
+
+a.btn.btn-light:hover,
+button.btn.btn-light:hover,
+input[type="submit"].btn.btn-light:hover {
+    color: #0080ab;
+    border-color: #0080ab;
+}
+
+a.btn.btn-light:disabled,
+button.btn.btn-light:disabled,
+input[type="submit"].btn.btn-light:disabled {
+    cursor: not-allowed;
+    color: #ccc;
+    border-color: #ccc;
+}
+
+a.btn.btn-grey,
+button.btn.btn-grey,
+input[type="submit"].btn.btn-grey {
+    background-color: #fff;
+    border: 1px solid #c3c3c3;
+    color: #adadad;
+}
+
+a.btn.btn-grey:hover,
+button.btn.btn-grey:hover,
+input[type="submit"].btn.btn-grey:hover {
+    color: #0080ab;
+    border-color: #0080ab;
+}
+
+a.btn.btn-grey:disabled,
+button.btn.btn-grey:disabled,
+input[type="submit"].btn.btn-grey:disabled {
+    cursor: not-allowed;
+    color: #ccc;
+    border-color: #333;
+}
+
+a.btn.btn-red,
+button.btn.btn-red,
+input[type="submit"].btn.btn-red {
+    background-color: #ce6363;
+    color: #fff;
+}
+
+a.btn.btn-red:disabled,
+button.btn.btn-red:disabled,
+input[type="submit"].btn.btn-red:disabled {
+    cursor: not-allowed;
+    background-color: #d29e9e;
+    color: #ccc;
+}
+
+.btn.large {
+    min-height: 4rem;
+    min-width: 15rem;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* - Reusable components ---------------------- */
+.center {
+    text-align: center;
+}
+
+.highlight {
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.highlight .highlight {
+    background-color: #eee;
+}
+
+.leader {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.leader h1 {
+    font-weight: bold;
+}
+
+.input-box {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.input-box label {
+    width: 9rem;
+    display: inline-block;
+    text-align: right;
+    margin-right: 1rem;
+    color: #13576e;
+    cursor: pointer;
+}
+
+.input-box label.required::after {
+    content: "*: ";
+}
+
+.input-box label::after {
+    content: " : ";
+}
+
+.input-box input[type="text"],
+.input-box textarea {
+    padding: 0.5rem;
+    width: 20rem;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.125rem;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #0099cc;
+    border-radius: 0;
+    transition: border 0.5s ease-out;
+    outline: none;
+}
+
+.input-box input[type="text"]:focus {
+    border: 1px solid #13576e;
+    border-radius: 0;
+}
+
+label.btn {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #0088ab;
+    color: #0088ab;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.input-box-table {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+
+}
+
+.input-box-table input[type="text"] {
+    flex-grow: 1;
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.25rem;
+    height: 2rem;
+    margin: 0;
+    color: #666;
+}
+
+.input-box-table .btn {
+    min-width: auto;
+    min-height: auto;
+    width: 4rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0 0.25rem;
+    line-height: 2rem;
+}
+
+/* - Page layout ------------------------------ */
+body > section {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    padding: 0 1rem;
+    min-height: 80vh;
+    background-color: #fff;
+    opacity: 100;
+    transition: opacity 0.3s ease-out;
+}
+
+.has-dialog section {
+    opacity: 0.5;
+}
+
+.page-title {
+    margin: 1rem 0 1rem 0;
+    padding: 0 0 1rem 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.page-title span {
+    color: #0080ab;
+}
+
+.msg {
+    padding: 1rem;
+    background-color: #0099cc;
+    color: #fff;
+    font-size: 1.125rem;
+}
+
+.msg.error-msg {
+    background-color: #ce6363;
+}
+
+.box > div {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.box > div > h2 {
+    color: #0080ab;
+    padding: 0.25rem;
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+footer {
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+    background-color: #e4e4e4;
+    color: #7b7b7b;
+    font-size: 0.75rem;
+}
+
+footer a,
+footer a:visited {
+    color: #6f6f6f;
+}
+
+footer a:hover {
+    color: #333;
+}
+
+footer p {
+    text-align: center;
+}
+
+#dialog {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    width: 40vw;
+    max-height: 80vh;
+    min-width: 30vw;
+    min-height: 30vh;
+    margin-top: -20vh;
+    margin-left: -20vw;
+    z-index: 10;
+    background: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 1px 2px #ccc;
+    transition: all 0.5s ease-out;
+}
+
+#dialog.off {
+    top: 52vh;
+    display: none;
+}
+
+#dialog-toolbar {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.125rem;
+    height: 2rem;
+    background-color: #fafafa;
+}
+
+#dialog-title {
+    flex-grow: 1;
+    padding: 0 0.5rem;
+    text-align: left;
+    height: 2rem;
+}
+
+#dialog-close {
+    cursor: pointer;
+    height: 2rem;
+    padding: 0 0.5rem;
+}
+
+#dialog-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* - Homepage --------------------------------- */
+
+
+/* - Webinar presenter------------------------- */
+#webinar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#webinar > div {
+    margin: 0px auto;
+}
+
+#webinar .controls {
+    width: 16rem;
+}
+
+#webinar .display {
+    flex-grow: 1;
+}
+
+#webinar .display > div {
+    margin-bottom: 1.5rem;
+}
+
+#presenter-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#presenter-msg {
+    flex-grow: 1;
+    padding: 0 1rem;
+    text-align: left;
+    color: #0080ab;
+    font-size: 0.9rem;
+}
+
+#broadcast-status {
+    width: 7.5rem;
+    text-align: center;
+    padding: 0.25rem;
+    transition: all 0.5s ease-out;
+}
+
+#broadcast-status.offline {
+    background-color: #8c8c8c;
+    color: #f3f3f3;
+}
+
+#broadcast-status.onair {
+    background-color: green;
+    color: #fff;
+    font-weight: bold;
+}
+
+#broadcast-status.ready {
+    background-color: green;
+    color: #fff;
+}
+
+#broadcast-status.connecting {
+    background-color: #d0b600;
+    color: #fff;
+}
+
+#broadcast-status.paused {
+    background-color: #0088ab;
+    color: #fff;
+    font-weight: bold;
+}
+
+#broadcast-status.error {
+    background-color: #ce6363;
+    color: #fff;
+    font-weight: bold;
+}
+
+#stats {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#stats > div {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+#installers.hidden {
+    display: none;
+}
+
+#presenter-view {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.viewport {
+    background-color: #f3f3f3;
+    margin: 0 1rem;
+    padding: 1rem;
+    min-width: 24rem;
+    min-height: 18rem;
+}
+
+.viewport h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.viewport-controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.viewport-controls button.btn {
+    min-width: 3rem;
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.viewport-controls .hidden {
+    display: none;
+}
+
+.feed {
+    width: 320px;
+    height: 240px;
+    transition: all 0.5s ease-out;
+}
+
+.feed.inactive {
+    background-color: #fafafa;
+}
+
+/* - Webinar viewer --------------------------- */
+.webinar-viewer-viewports {
+    width: 90vw;
+    height: 75vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    position: relative;
+    background: #fff url("/assets/images/not-live.png") center center no-repeat;
+}
+
+.webinar-viewer-viewports .feed {
+    display: none;
+    background-color: #fafafa;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: opacity 0.3s ease-out, width 0.3s ease-out;
+}
+
+.webinar-viewer-viewports.is-live .feed {
+    display: block;
+}
+
+.webinar-viewer-viewports.has-camera .screen,
+.webinar-viewer-viewports.has-screen .camera {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.webinar-viewer-viewports.has-screen .screen,
+.webinar-viewer-viewports.has-camera.has-screen .screen,
+.webinar-viewer-viewports.has-camera .camera {
+    display: block;
+    height: 100%;
+    width: auto;
+    opacity: 100;
+}
+
+.webinar-viewer-viewports.has-screen .screen,
+.webinar-viewer-viewports.has-camera .camera {
+    flex-grow: 1;
+}
+
+.webinar-viewer-viewports.has-camera.has-screen .camera {
+    width: 18rem;
+    flex-grow: 0;
+}
+
+.webinar-viewer-viewports.is-live.no-video {
+    background: #fafafa url("/assets/images/live-no-video.png") center center no-repeat;
+}
+
+.webinar-viewer .feed.hidden {
+    display: none;
+}
+
+/**
+ * OpenTok specific CSS overrides
+ */
+.webinar-viewer .OT_widget-container {
+    background-color: #fafafa;
+}

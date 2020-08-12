@@ -1,0 +1,25 @@
+<%- include("includes/head") %>
+
+<div class="highlight leader">
+  <h1 class="page-title">Home Learning - SMK Pembangunan Jaya</h1>
+
+  <p>Webinar - SMK Pembangunan Jaya</p>
+
+  <div class="highlight">
+    <form method="POST" id="form-webinar-new" action="webinar/new" autocomplete="off">
+      <div class="input-box">
+        <label class="required" for="webinar-name">Nama Kelas/Mapel</label>
+        <input type="text" id="webinar-name" maxlength="32" name="webinar_name"
+               placeholder="Contoh: X TKJ 1" required autofocus>
+      </div>
+      <input type="submit" class="btn btn-large" value="Mulai">
+
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+
+    </form>
+  </div>
+</div>
+
+
+
+<%- include("includes/foot") %>
